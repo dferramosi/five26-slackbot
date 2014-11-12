@@ -7,5 +7,5 @@
 
 module.exports = (robot) ->
 
-  robot.respond /panic/i, (msg) ->
+  robot.hear /panic/i, (msg) ->
     msg.send "http://i.imgur.com/jAU4NIG.gif"
