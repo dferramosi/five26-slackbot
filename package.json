@@ -28,7 +28,6 @@
     "hubot":              ">= 2.6.0 < 3.0.0",
     "hubot-scripts":      ">= 2.5.0 < 3.0.0",
     "hubot-slack":        ">= 1.5.3 < 2.0.0",
-    "hubot-plusplus":     ">= 1.1.1 < 2.0.0",
     "hubot-business-cat": ">= 1.1.6 < 2.0.0",
     "hubot-victory":      ">= 0.0.0",
     "hubot-bikeshed":     ">= 0.0.0"
