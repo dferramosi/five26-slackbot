@@ -1,4 +1,5 @@
 [ 
+  "pg-brain.coffee",
   "shipit.coffee",
   "swanson.coffee",
   "steveholt.coffee",
