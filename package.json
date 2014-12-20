@@ -27,7 +27,7 @@
   "dependencies": {
     "hubot":              ">= 2.6.0 < 3.0.0",
     "hubot-scripts":      ">= 2.5.0 < 3.0.0",
-    "hubot-slack":        ">= 2.0.0 < 3.0.0",
+    "hubot-slack":        ">= 3.2.1 < 4.0.0",
     "hubot-business-cat": ">= 1.1.6 < 2.0.0",
     "hubot-victory":      ">= 0.0.0",
     "hubot-bikeshed":     ">= 0.0.0",
