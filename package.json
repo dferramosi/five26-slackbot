@@ -31,7 +31,8 @@
     "hubot-business-cat": ">= 1.1.6 < 2.0.0",
     "hubot-victory":      ">= 0.0.0",
     "hubot-bikeshed":     ">= 0.0.0",
-    "pg":                 "~0.10.2"
+    "pg":                 "~0.10.2",
+    "hubot-thank-you":    ">= 0.0.0"
   },
 
   "engines": {
