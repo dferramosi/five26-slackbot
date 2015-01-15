@@ -21,7 +21,6 @@
   "corgime.coffee",
   "coin.coffee",
   "bij.coffee",
-  "ascii.coffee",
   "ackbar.coffee",
   "setenv.coffee"
 ]
