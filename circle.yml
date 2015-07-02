@@ -1,3 +1,7 @@
+test:
+  override:
+      - echo "built!" 
+
 deployment:  
   production:
     branch: master    
