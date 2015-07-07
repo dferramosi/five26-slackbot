@@ -20,7 +20,8 @@
     "hubot-slack": "^3.2.1",
     "hubot-youtube": "^0.1.2",
     "cheerio": "0.7.0",
-    "hubot-plusplus": "^1.1.5"
+    "hubot-plusplus": "^1.1.5",
+    "beer-advocate-api": "http://registry.npmjs.org/beer-advocate-api/-/beer-advocate-api-0.0.7.tgz"
   },
   "engines": {
     "node": "0.10.x"
