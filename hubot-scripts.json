@@ -20,5 +20,6 @@
   "bij.coffee",
   "ackbar.coffee",
   "setenv.coffee",
-  "insult.coffee"
+  "insult.coffee",
+  "github-commits.coffee"
 ]
