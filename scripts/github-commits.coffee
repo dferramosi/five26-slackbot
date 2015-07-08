@@ -57,6 +57,6 @@ module.exports = (robot) ->
       else if !process.env.HUBOT_GITHUB_COMMITS_ONLY
         robot.send user, "#{push.context} sent a message about commit #{push.commit.commit.message}"
         robot.send user, "Description: #{push.description}"
-        robot.dend user, "State: #{push.state}"
+        robot.send user, "State: #{push.state}"
     catch error
       console.log "github-commits error: #{error}. Push: #{push}"
