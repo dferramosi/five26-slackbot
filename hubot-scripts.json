@@ -20,6 +20,5 @@
   "bij.coffee",
   "ackbar.coffee",
   "setenv.coffee",
-  "insult.coffee",
-  "bang-bang.coffee"
+  "insult.coffee"
 ]
