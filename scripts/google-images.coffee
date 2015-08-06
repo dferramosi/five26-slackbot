@@ -13,6 +13,7 @@
 #   hubot <query> mbomb <count> - return a bomb of mustached people, default 5 images returned
 #   hubot imgthat - return an image of the last mentioned phrase
 #   hubot animatethat - return a animated image of the last mentioned phrase
+#   hubot ohmy - return an oh my'ing Takei
 
 default_bomb = 3
 
@@ -27,6 +28,10 @@ module.exports = (robot) ->
 
   robot.respond /(?:image|img)(?: me)? (.*)/i, (msg) ->
     imageMe msg, msg.match[1], 1, (url) ->
+      msg.send url
+
+  robot.respond /(?:ohmy|takei)(?: me)?(.*)/i, (msg) ->
+    takeiMe
       msg.send url
 
   robot.respond /animate(?: me)? (.*)/i, (msg) ->
@@ -82,6 +87,10 @@ mustachMe = (msg, query, cb) ->
 
 imageMe = (msg, query, count, cb) ->
   googleApi msg, imageQuery(msg, query, ''), count, (image) ->
+      null_check_callback(image, cb)
+
+takeiMe = (msg, query, count, cb) ->
+  googleApi msg, imageQuery("takei oh my", query), count, (image) ->
       null_check_callback(image, cb)
 
 animateMe = (msg, query, count, cb) ->
