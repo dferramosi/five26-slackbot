@@ -30,7 +30,7 @@ module.exports = (robot) ->
     imageMe msg, msg.match[1], 1, (url) ->
       msg.send url
 
-  robot.respond /(?:ohmy|takei)(?: me)?(.*)/i, (msg) ->
+  robot.respond /(?:ohmy|takei)(?: me)? (.*)/i, (msg) ->
     takeiMe
       msg.send url
 
@@ -90,7 +90,7 @@ imageMe = (msg, query, count, cb) ->
       null_check_callback(image, cb)
 
 takeiMe = (msg, query, count, cb) ->
-  googleApi msg, imageQuery("takei oh my", query), count, (image) ->
+  googleApi msg, imageQuery("takei oh my", query, '')), count, (image) ->
       null_check_callback(image, cb)
 
 animateMe = (msg, query, count, cb) ->
