@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   fuckface cast <card name> - a picture of the named magic card
+#   cast <card name> - a picture of the named magic card
 #
 # Author:
 #   djljr
