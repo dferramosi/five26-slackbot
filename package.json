@@ -22,7 +22,7 @@
     "cheerio": "0.7.0",
     "hubot-plusplus": "^1.1.5",
     "gitio2": "^2.0.0",
-    "jsdom": "~4.0.2"
+    "jsdom": "3.1.2"
   },
   "engines": {
     "node": "0.10.x"
