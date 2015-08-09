@@ -4,16 +4,13 @@
 #   Function:
 #	everyone loves to fuckface
 
+cloudflare = [':poop:flare', 'lulzflare', 'derpflare', 'herpesflare', 'downtimeflare']
+
 module.exports = (robot) ->
 
    #Stupid simple shit responses we enjoy:
    robot.hear /joel/i, (msg) ->
      msg.send "JOEL!!!"
 
-   robot.hear /lolflare/i, (msg) ->
-     msg.send "I think you shitheads mean cloudflare..."
-
    robot.hear /cloudflare/i, (msg) ->
-     msg.send ":poop:flare"
-
-
+     msg.send msg.random cloudflare
