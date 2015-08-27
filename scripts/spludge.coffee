@@ -18,7 +18,7 @@
 
 module.exports = (robot) ->
 
-  robot.respond /"fuckface --"/i, (msg) ->
+  robot.respond /"spludge"/i, (msg) ->
     #fuckface should only do this 10% of the time
     msg.reply "*Pump* *Pump* *Pump*, _lets take this private_"
     aim = msg.random ["head", "chest"]
