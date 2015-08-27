@@ -18,11 +18,10 @@
 
 module.exports = (robot) ->
 
-  robot.hear /fuckface --/i, (msg) ->
+  robot.hear /fuckface--|fuckface --/i, (msg) ->
     
-    percent = Math.floor(Math.random() * 100)
-    
-    if (percent <= 10){
+    #percent = Math.floor(Math.random() * 100)
+    #if (percent <= 10){
       msg.send "*Pump* *Pump* *Pump*, _lets take this to @dml 's bathroom_"
       aim = msg.random ["head", "chest"]
     
@@ -42,4 +41,4 @@ module.exports = (robot) ->
             "All over your giant glistening manboobs.  Fuckface ++"
           ]
       msg.reply "#{result target}"
-    }
+    #}
