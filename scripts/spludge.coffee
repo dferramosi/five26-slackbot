@@ -18,11 +18,11 @@
 
 module.exports = (robot) ->
 
-  robot.respond /spludge/i, (msg) ->
-    msg.reply "*Pump* *Pump* *Pump*, _lets take this private_"
+  robot.hear /fuckface --/i, (msg) ->
+    msg.send "*Pump* *Pump* *Pump*, _lets take this to private local_"
     aim = msg.random ["head", "chest"]
-    target = msg.random ["#{aim}", "#{aim}", "#{aim}", "#{aim}", "miss"]
     
+    target = msg.random ["#{aim}", "#{aim}", "#{aim}", "#{aim}", "miss"]
     result = (target) ->
       if target is "miss"
         "I think i'd rather jizz all over #NSFWGENERAL, bbl"
