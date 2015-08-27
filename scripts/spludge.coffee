@@ -18,8 +18,7 @@
 
 module.exports = (robot) ->
 
-  robot.respond /"spludge"/i, (msg) ->
-    #fuckface should only do this 10% of the time
+  robot.respond /spludge/i, (msg) ->
     msg.reply "*Pump* *Pump* *Pump*, _lets take this private_"
     aim = msg.random ["head", "chest"]
     target = msg.random ["#{aim}", "#{aim}", "#{aim}", "#{aim}", "miss"]
@@ -38,4 +37,4 @@ module.exports = (robot) ->
         msg.random [
           "All over your giant glistening manboobs.  Fuckface ++"
         ]
-    msg.reply "#{result target}"
+    msg.reply "Fuck you #{result target}"
