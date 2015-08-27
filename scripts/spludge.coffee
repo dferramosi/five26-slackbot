@@ -22,23 +22,23 @@ module.exports = (robot) ->
     
     #percent = Math.floor(Math.random() * 100)
     #if (percent <= 10){
-      msg.send "*Pump* *Pump* *Pump*, _lets take this to @dml 's bathroom_"
-      aim = msg.random ["head", "chest"]
+    msg.send "*Pump* *Pump* *Pump*, _lets take this to @dml 's bathroom_"
+    aim = msg.random ["head", "chest"]
     
-      target = msg.random ["#{aim}", "#{aim}", "#{aim}", "#{aim}", "miss"]
-      result = (target) ->
-        if target is "miss"
-          "I think i'd rather jizz all over #NSFWGENERAL, bbl"
-        else if target is "head"
-          msg.random [
-            "Oooooh yeahhhhh, right in the back of your open gaping throat! _Fuckface_ ++",
-            "Right up your nose. Lets take a selfie together. #fuckfacegetsrevenge",
-            "...in the ear.  No one likes it in the ear...",
-            "*SPLUUUUURRRRRight* in the eye.  -- your vision"
-          ]
-        else if target is "chest"
-          msg.random [
-            "All over your giant glistening manboobs.  Fuckface ++"
-          ]
-      msg.reply "#{result target}"
+    target = msg.random ["#{aim}", "#{aim}", "#{aim}", "#{aim}", "miss"]
+    result = (target) ->
+      if target is "miss"
+        "I think i'd rather jizz all over #NSFWGENERAL, bbl"
+      else if target is "head"
+        msg.random [
+          "Oooooh yeahhhhh, right in the back of your open gaping throat! _Fuckface_ ++",
+          "Right up your nose. Lets take a selfie together. #fuckfacegetsrevenge",
+          "...in the ear.  No one likes it in the ear...",
+          "*SPLUUUUURRRRRight* in the eye.  -- your vision"
+        ]
+      else if target is "chest"
+        msg.random [
+          "All over your giant glistening manboobs.  Fuckface ++"
+        ]
+    msg.reply "#{result target}"
     #}
