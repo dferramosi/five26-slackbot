@@ -1,6 +1,6 @@
 test:
   override:
-      - echo ":jake: algebraic!!!  :finn: " 
+      - echo "algebraic!!! " 
 
 notify:
   webhooks:
