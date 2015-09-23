@@ -29,7 +29,9 @@ module.exports = (robot) ->
 
           if title and image
             msg.send "#{title}"
-            msg.send "this will work, because -indents are correct"
+            msg.send "testing getting env variables, this should work according to documentation"
+            msg.send process.env.apiCall
             msg.send process.env.slackUserApiCall
+            msg.send "-----------------"
             msg.send "#{image}"
         )(window.jQuery)
