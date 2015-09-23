@@ -30,5 +30,6 @@ module.exports = (robot) ->
           if title and image
             msg.send "#{title}"
             msg.send "this will work, because -indents are correct"
+            msg.send process.env.slackUserApiCall
             msg.send "#{image}"
         )(window.jQuery)
