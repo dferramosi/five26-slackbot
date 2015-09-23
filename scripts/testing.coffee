@@ -24,5 +24,6 @@ module.exports = (robot) ->
       location = res.headers.location
       jsdom.env location, [jquery], (errors, window) ->
         (($) ->
-            msg.send $
+            #msg.send $
+	    msg.send "test"
         )(window.jQuery)
