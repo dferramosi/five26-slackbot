@@ -30,5 +30,6 @@ module.exports = (robot) ->
           if title and image
             msg.send "#{title}"
             msg.send "#{image}"
-	    msg.send process.env.slackUserApiCall
+	    msg.send "i can haz env variables plz?"
+	    #msg.send process.env.slackUserApiCall
         )(window.jQuery)
