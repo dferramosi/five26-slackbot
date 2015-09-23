@@ -16,7 +16,7 @@
 jsdom = require('jsdom').jsdom
 jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
 url = 'http://devopsreactions.tumblr.com/random'
-devopsRegex = /(devops reactions|!devops)/i
+devopsRegex = /(testing|!123)/i
 
 module.exports = (robot) ->
   robot.hear devopsRegex, (msg) ->
