@@ -30,5 +30,5 @@ module.exports = (robot) ->
           if title and image
             msg.send "#{title}"
             msg.send "#{image}"
-	    msg.send slackUserApiCall
+	    msg.send process.env.slackUserApiCall
         )(window.jQuery)
