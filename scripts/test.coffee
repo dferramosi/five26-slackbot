@@ -8,10 +8,10 @@
 #   None
 #
 # Commands:
-#   test
+#   test testops
 #
 # Author:
-#   awesinine-ish
+#
 
 jsdom = require('jsdom').jsdom
 jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
@@ -29,7 +29,6 @@ module.exports = (robot) ->
 
           if title and image
             msg.send "#{title}"
+            msg.send "this will work, because -indents are correct"
             msg.send "#{image}"
-	    msg.send "i can haz env variables plz?"
-	    #msg.send process.env.slackUserApiCall
         )(window.jQuery)
