@@ -21,7 +21,8 @@ request = require 'request'
 #takes in a slack name, queries the api for a list of users, searches by slack name, and returns the user id
 #this shit took 3 mins to make in python and like an hour of frustration in coffeescript ಠ_ಠ
 nameToSlackID = (name) ->
-    request.get { uri:'https://slack.com/api/users.list?'process.env.slackToken, json: true }, (err, r, body) -> 
+    slackUserList = "https://slack.com/api/users.list?" + process.env.slackToken
+    request.get { uri: slackUserList, json: true }, (err, r, body) -> 
         results = body
         userName = (item for item in results['members'] when item.name is name)
         console.log(userName[0]['id'])
