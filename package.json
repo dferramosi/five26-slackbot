@@ -5,6 +5,8 @@
   "author": "Dominic Ferrantelli <dominic@ferrantel.li>",
   "description": "fuckface2.0",
   "dependencies": {
+    "cheerio": "0.7.0",
+    "gitio2": "^2.0.0",
     "hubot": "^2.11.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.2",
@@ -12,6 +14,7 @@
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
     "hubot-maps": "0.0.1",
+    "hubot-plusplus": "^1.1.5",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.2",
     "hubot-rules": "^0.1.0",
@@ -19,10 +22,9 @@
     "hubot-shipit": "^0.1.1",
     "hubot-slack": "^3.2.1",
     "hubot-youtube": "^0.1.2",
-    "cheerio": "0.7.0",
-    "hubot-plusplus": "^1.1.5",
-    "gitio2": "^2.0.0",
-    "jsdom": "3.1.2"
+    "jsdom": "3.1.2",
+    "request-json": "^0.5.3",
+    "request"
   },
   "engines": {
     "node": "0.10.x"
