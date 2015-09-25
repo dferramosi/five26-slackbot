@@ -20,8 +20,8 @@ request = require 'request'
 
 ff = "&channel=C02Q2L5K5&text=fuckface++&username=fuckface&icon_emoji=%3A%3A"
 
-postAsFF = (message) ->
-    apiCall = "https://slack.com/api/chat.postMessage?token=" + process.env.slackToken + "&channel=C02Q2L5K5&text=" + message + "&username=fuckface&icon_emoji=%3Arainbow%3A&pretty=1"
+postAsFF = (message, channel) ->
+    apiCall = "https://slack.com/api/chat.postMessage?token=" + process.env.slackToken + "&channel=" + channel + "&text=" + message + "&username=fuckface&icon_emoji=%3Arainbow%3A&pretty=1"
     console.log(apiCall)
     request.post {url: apiCall}, (err, httpResponse, body) ->
         console.log('worked', body)
@@ -60,6 +60,5 @@ module.exports = (robot) ->
         ]
     #msg.reply "#{result target}"
     msg.http("https://slack.com/api/chat.postMessage?token={process.env.slackToken}{ff}")
-    msg.send nameToSlackID 'awesinine'
-    postAsFF "#{result target}"
+    postAsFF "#{result target}" "ameToSlackID 'awesinine'"
     robot.send {room: nameToSlackID "awesinine"}, "#{result target}"
