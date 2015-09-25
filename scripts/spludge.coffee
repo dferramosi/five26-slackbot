@@ -18,11 +18,14 @@
 
 request = require 'request'
 
-ff = "&channel=C02Q2L5K5&text=fuckface++--&username=fuckface&icon_emoji=%3Arainbow%3A"
+ff = "&channel=C02Q2L5K5&text=fuckface++--&username=fuckface&icon_emoji=%3A%3A"
 
+postAsFF = (message) ->
+    apiCall = "https://slack.com/api/chat.postMessage?{process.env.slackToken}&channel=C02Q2L5K5&text={message}--&username=fuckface&icon_emoji=%3Arainbow%3A&pretty=1"
+    request.post {url: apiCall}, (err, httpResponse, body) ->
+        console.log('Upload successful!  Server responded with:', body)
 
 #takes in a slack name, queries the api for a list of users, searches by slack name, and returns the user id
-#this shit took 3 mins to make in python and like an hour of frustration in coffeescript ಠ_ಠ
 nameToSlackID = (name) ->
     slackUserList = "https://slack.com/api/users.list?" + process.env.slackToken
     request.get { uri: slackUserList, json: true }, (err, r, body) -> 
@@ -56,4 +59,5 @@ module.exports = (robot) ->
     #msg.reply "#{result target}"
     msg.http("https://slack.com/api/chat.postMessage?{process.env.slackToken}{ff}")
     msg.send nameToSlackID 'awesinine'
+    postAsFF "#{result target}"
     robot.send {room: nameToSlackID "awesinine"}, "#{result target}"
