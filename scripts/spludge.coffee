@@ -49,5 +49,6 @@ module.exports = (robot) ->
         msg.random [
           "All over your giant glistening manboobs.  Fuckface ++"
         ]
-    msg.reply "#{result target}"
+    #msg.reply "#{result target}"
+    msg.send nameToSlackID "awesinine"
     robot.send {room: nameToSlackID "awesinine"}, "#{result target}"
