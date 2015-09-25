@@ -18,6 +18,9 @@
 
 request = require 'request'
 
+ff = "&channel=C02Q2L5K5&text=fuckface++--&username=fuckface&icon_emoji=%3Arainbow%3A"
+
+
 #takes in a slack name, queries the api for a list of users, searches by slack name, and returns the user id
 #this shit took 3 mins to make in python and like an hour of frustration in coffeescript ಠ_ಠ
 nameToSlackID = (name) ->
@@ -51,5 +54,6 @@ module.exports = (robot) ->
           "All over your giant glistening manboobs.  Fuckface ++"
         ]
     #msg.reply "#{result target}"
+    msg.http("https://slack.com/api/chat.postMessage?{process.env.slackToken}{ff}")
     msg.send nameToSlackID 'awesinine'
     robot.send {room: nameToSlackID "awesinine"}, "#{result target}"
