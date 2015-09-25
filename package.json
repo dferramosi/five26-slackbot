@@ -24,7 +24,7 @@
     "hubot-youtube": "^0.1.2",
     "jsdom": "3.1.2",
     "request-json": "^0.5.3",
-    "request"
+    "request" : "2.63.0"
   },
   "engines": {
     "node": "0.10.x"
