@@ -1,4 +1,4 @@
-# Description
+#Description
 #   Fuckface spludges anyone that --'s him in an orifice now
 #
 # Dependencies:
@@ -16,7 +16,6 @@
 # Author:
 #   Awesinine, adapted from the stupid dart game (google it bitch)
 
-https = require 'https'
 request = require 'request'
 
 #takes in a slack name, queries the api for a list of users, searches by slack name, and returns the user id
