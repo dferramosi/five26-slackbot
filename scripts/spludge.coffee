@@ -21,7 +21,7 @@ request = require 'request'
 ff = "&channel=C02Q2L5K5&text=fuckface++--&username=fuckface&icon_emoji=%3A%3A"
 
 postAsFF = (message) ->
-    apiCall = "https://slack.com/api/chat.postMessage?{process.env.slackToken}&channel=C02Q2L5K5&text={message}--&username=fuckface&icon_emoji=%3Arainbow%3A&pretty=1"
+    apiCall = "https://slack.com/api/chat.postMessage?#{process.env.slackToken}&channel=C02Q2L5K5&text=#{message}--&username=fuckface&icon_emoji=%3Arainbow%3A&pretty=1"
     request.post {url: apiCall}, (err, httpResponse, body) ->
         console.log('Upload successful!  Server responded with:', body)
 
