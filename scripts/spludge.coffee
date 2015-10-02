@@ -38,5 +38,5 @@ module.exports = (robot) ->
         robot.http(process.env.slackIncomingWebhook)
           .header('Accept', 'application/json')
           .get(data) (err, res, body) ->
-            msg.send "sent"
-            msg.send JSON.stringify userLookup[0].id
+            #msg.send "sent"
+            #msg.send JSON.stringify userLookup[0].id
