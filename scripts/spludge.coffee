@@ -14,10 +14,10 @@
 #   None
 #
 # Author:
-#   Awesinine, adapted from the stupid dart game (google it bitch)
+#   Awesinine.  Yeah, me
 
 module.exports = (robot) ->
-  robot.hear /fuckface--|fuckface -- (.*)/i, (msg) ->
+  robot.hear /fuckface--|fuckface --/i, (msg) ->
     slackUserList = "https://slack.com/api/users.list?token=" + process.env.slackToken
     robot.http(slackUserList)
       .header('Accept', 'application/json')
