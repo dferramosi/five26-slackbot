@@ -20,3 +20,6 @@ module.exports = (robot) ->
 	
    robot.hear /cloudflare/i, (msg) ->
      msg.send msg.random cloudflare
+
+   robot.hear /kpi/i, (msg) ->
+     msg.send "KPI... sounds a lot like a Roger word"
