@@ -32,6 +32,6 @@ module.exports = (robot) ->
    robot.hear /rectum/i, (msg) ->
      msg.send "rectum? DAMN NEAR KILLED EM!"
 
-   robot.hear /fuck/i, (msg) ->
-     msg.send "EARMUFFS!"
+#   robot.hear /fuck/i, (msg) -> #never uncomment this
+#     msg.send "EARMUFFS!"
 
