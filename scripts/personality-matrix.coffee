@@ -29,3 +29,9 @@ module.exports = (robot) ->
    robot.hear /kpi/i, (msg) ->
      msg.send "KPI... sounds a lot like a Roger word"
 
+   robot.hear /rectum/i, (msg) ->
+     msg.send "rectum? DAMN NEAR KILLED EM!"
+
+   robot.hear /fuck/i, (msg) ->
+     msg.send "EARMUFFS!"
+
