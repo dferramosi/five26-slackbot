@@ -5,7 +5,7 @@
 #	everyone loves to fuckface
 
 cloudflare = [':poop:flare', 'lulzflare', 'derpflare', 'herpesflare', 'downtimeflare']
-kek = ['http://i.imgur.com/BqjKRio.jpg?1', 'http://static4.fjcdn.com/comments/Gt+youtube+gt+staff+_306f4976c2e7da3e14d542a2fe99c53b.png', 'http://i.imgur.com/c7u9m3S.gif?1']
+kek = ['http://i.imgur.com/jhqGVTR.jpg', 'http://i.imgur.com/BqjKRio.jpg?1', 'http://static4.fjcdn.com/comments/Gt+youtube+gt+staff+_306f4976c2e7da3e14d542a2fe99c53b.png', 'http://i.imgur.com/c7u9m3S.gif?1']
 
 module.exports = (robot) ->
 
