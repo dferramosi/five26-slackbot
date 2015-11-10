@@ -16,7 +16,7 @@ module.exports = (robot) ->
    robot.respond politecheck, (msg) ->
       politenessScrap msg.robot.brain.get(politecheck_lookup_id(msg)), (back) ->
          #msg.send slackMessage back
-         robot.adapter.customMessage slackMessage back
+         robot.emit 'slack-attachment', slackMessage(msg,back)
          #msg.send back
 
   #robot hears everything, caches the last thing heard that isn't politecheck
@@ -26,7 +26,7 @@ module.exports = (robot) ->
       if ( !politecheck.test(message))
          msg.robot.brain.set politecheck_lookup_id(msg), message 
 
-slackMessage = (msg, cb) ->
+slackMessage = (msg, value, cb) ->
    link = "https://labs.foxtype.com/politeness"
    value = 0
    value = Math.round(msg.score * 100) / 1
@@ -40,20 +40,14 @@ slackMessage = (msg, cb) ->
    else if value < 40
        badgeImg = "http://i.imgur.com/t5AvBQF.jpg"
       #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
-   msgData = {
-      text: "You were polite checked: #{value}%"
-      attachments: [
-         {
-            fallback: "",
-            title: "You were polite checked: #{value}%"
-            title_link: "#{link}"
-            text: ""
-            mrkdwn_in: ["text"]
-         },
-         "image_url": "#{badgeImg}",
-         ]
+
+      data = {
+         attachments: [{color:"#4183C4",title: "Test",text:"this is a test."}],
+         icon_url: "#{badgeImg}",
+         text: "#{value}"
       }
-   return msgData
+
+   return data
 
       		
 politenessScrap = (msg, cb) ->
