@@ -32,7 +32,6 @@ slackMessage = (msg, cb) ->
        #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
   
   msgData = {
-    channel: res.message.room
     text: "You were polite checked: #{value}%"
     attachments: [
       {
