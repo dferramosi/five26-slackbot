@@ -1,19 +1,10 @@
 module.exports = (robot) ->
-   msgData = {
-      channel: "channel"
-      text: "text"
-      attachments: [
-         {
-            fallback: "fallback",
-            title: "title"
-            title_link: "title link"
-            text: "text"
-            mrkdwn_in: ["text"]
-         }
-      ]
-   }
-
-   testcheck=/test( )?check/i
-  
+   testcheck=/test( )?check/i  
    robot.respond testcheck, (msg) ->
-      robot.adapter.customMessage msgData
+      robot.emit 'slack-attachment', {
+         channel: "test",
+         attachments: [{color:"#4183C4",title: "Test",text:"this is a test."}],
+         username: "testbot",
+         icon_url: "http://images.customplanet.com/UserCreatedImages/MainDisplayImages/Front/0f8326b3-ad83-4aec-822e-9db26fdd9bf0.png",
+         text: ""
+      }
