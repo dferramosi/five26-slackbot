@@ -42,7 +42,9 @@ slackMessage = (msg, value, cb) ->
       #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
 
       data = {
+         channel: "git",
          attachments: [{color:"#4183C4",title: "Test",text:"this is a test."}],
+         username: "testbot",
          icon_url: "#{badgeImg}",
          text: "#{value}"
       }
