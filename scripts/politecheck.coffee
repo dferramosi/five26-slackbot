@@ -30,7 +30,6 @@ slackMessage = (msg, cb) ->
    else if value < 40
        badgeImg = "http://i.imgur.com/t5AvBQF.jpg"
        #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
-  
   msgData = {
     text: "You were polite checked: #{value}%"
     attachments: [
@@ -44,7 +43,7 @@ slackMessage = (msg, cb) ->
       "image_url": "#{badgeImg}",
     ]
   }
-
+  cb msgData
 
   #robot hears everything, caches the last thing heard that isn't politecheck
   #should likely expand this to a list of all robot commands
