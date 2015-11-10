@@ -36,15 +36,15 @@ politenessScrap = (msg, cb) ->
            json = JSON.parse body
            value = Math.round(json.score * 100) / 1
            if value >= 70
-               cb value
+               #cb value
                cb "http://i.imgur.com/ux8gV2Q.jpg"
                #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Grandma-green.svg"
            else if value >= 40 && json.score < 70
-           	   cb value
+           	   #cb value
            	   cb "http://i.imgur.com/l91y3n0.jpg"
            	   #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Slightly%20Dickish-orange.svg"
            else if value < 40
-           	   cb value
+           	   #cb value
            	   cb "http://i.imgur.com/t5AvBQF.jpg"
            	   #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
          catch err
