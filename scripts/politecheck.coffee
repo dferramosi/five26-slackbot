@@ -26,9 +26,9 @@ module.exports = (robot) ->
       if ( !politecheck.test(message))
          msg.robot.brain.set politecheck_lookup_id(msg), message 
 
-slackMessage = (msg, value, cb) ->
+slackMessage = (msg, back, cb) ->
    link = "https://labs.foxtype.com/politeness"
-   value = Math.round(msg.score * 100) / 1
+   value = Math.round(back.score * 100) / 1
    
    if value >= 70
       badgeImg = "http://i.imgur.com/ux8gV2Q.jpg"
