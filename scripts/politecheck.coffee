@@ -30,26 +30,34 @@ slackMessage = (msg, back, cb) ->
    link = "https://labs.foxtype.com/politeness"
    value = Math.round(back.score * 100) / 1
    
+
+   #this can be expanded to include the tags for kind of communication from the API: confrontational, polite etc.
+   #their rating system has a % number and kind
    if value >= 70
       badgeImg = "http://i.imgur.com/ux8gV2Q.jpg"
+      color = "#4183C4"
+      title = "Certified Grandma!"
       #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Grandma-green.svg"
    else if value >= 40 && value < 70
-      #badgeImg = "http://i.imgur.com/l91y3n0.jpg"
+      badgeImg = "http://i.imgur.com/l91y3n0.jpg"
+      color = "#FFA500"
+      title = "Slightly Dickish"
       #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Slightly%20Dickish-orange.svg"
    else if value < 40
        badgeImg = "http://i.imgur.com/t5AvBQF.jpg"
+       color = "#FF0000"
+       title = "Certified Asshole!"
       #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
 
       data = {
          channel: "git",
-         attachments: [{color:"#4183C4",title: "Test",text:"this is a test."}],
+         attachments: [{color:"#{color}",title: "#{title}"}],
          username: "politechecked",
          image_url: "#{badgeImg}",
          text: "#{value}% Polite"
       }
 
    return data
-
       		
 politenessScrap = (msg, cb) ->
    phrase = msg
