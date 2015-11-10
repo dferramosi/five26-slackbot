@@ -28,7 +28,6 @@ module.exports = (robot) ->
 
 slackMessage = (msg, value, cb) ->
    link = "https://labs.foxtype.com/politeness"
-   value = 0
    value = Math.round(msg.score * 100) / 1
    
    if value >= 70
@@ -44,9 +43,9 @@ slackMessage = (msg, value, cb) ->
       data = {
          channel: "git",
          attachments: [{color:"#4183C4",title: "Test",text:"this is a test."}],
-         username: "testbot",
-         icon_url: "#{badgeImg}",
-         text: "#{value}"
+         username: "politechecked",
+         image_url: "#{badgeImg}",
+         text: "#{value}% Polite"
       }
 
    return data
