@@ -30,7 +30,6 @@ slackMessage = (msg, back, cb) ->
    link = "https://labs.foxtype.com/politeness"
    value = Math.round(back.score * 100) / 1
    
-
    #this can be expanded to include the tags for kind of communication from the API: confrontational, polite etc.
    #their rating system has a % number and kind
    if value >= 70
@@ -50,7 +49,7 @@ slackMessage = (msg, back, cb) ->
       #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
 
       data = {
-         channel: "git",
+         channel: msg.message.room,
          attachments: [{color:"#{color}",title: "#{title}"}],
          username: "politechecked",
          image_url: "#{badgeImg}",
