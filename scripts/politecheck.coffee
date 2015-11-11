@@ -38,15 +38,23 @@ slackMessage = (msg, back, cb) ->
 
    #this can be expanded to include the tags for kind of communication from the API: confrontational, polite etc.
    #their rating system has a % number and kind
-   if value >= 70
+   if value >= 90
       color = "#4183C4"
       title = "Nicely said Grandma..."
 
-   else if value >= 40 && value < 70
-      color = "#FFA500"
-      title = "That was slightly dickish"
+   else if value >= 70 && value < 90
+      color = "#1E90FF"
+      title = "That's polite enough that no one cares.  Why even check that you tard?"
 
-   else if value < 40
+   else if value >= 40 && value < 70
+       color = "#DCDCDC"
+       title = "You're in the no man's land for Politeness.  You passive-agressive fuck."
+
+   else if value >= 10 && value < 40
+       color = "#FFA500"
+       title = "That was pretty dickish"
+
+   else if value < 10
        color = "#FF0000"
        title = "You're a certified asshole!"
 
