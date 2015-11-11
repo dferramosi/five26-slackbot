@@ -16,8 +16,8 @@ module.exports = (robot) ->
    robot.respond politecheck, (msg) ->
       politenessScrap msg.robot.brain.get(politecheck_lookup_id(msg)), (back) ->
          #msg.send slackMessage back
-         robot.emit 'slack-attachment', slackMessage(msg,back)
-         #msg.send back
+         #robot.emit 'slack-attachment', slackMessage(msg,back)
+         msg.send slackMessage(msg.robot.brain.get(politecheck_lookup_id(msg),back)
 
   #robot hears everything, caches the last thing heard that isn't politecheck
   #should likely expand this to a list of all robot commands
@@ -27,10 +27,9 @@ module.exports = (robot) ->
          msg.robot.brain.set politecheck_lookup_id(msg), message 
 
 slackMessage = (msg, back, cb) ->
-   #phrase = msg
-   #phrase = phrase.replace(/\ /g, "+")
-   #link = "https://labs.foxtype.com/politeness?text=#{phrase}"
-   link = "http://www.google.com"
+   phrase = msg.message
+   phrase = phrase.replace(/\ /g, "+")
+   link = "https://labs.foxtype.com/politeness?text=#{phrase}"
    value = Math.round(back.score * 100) / 1
 
    #this can be expanded to include the tags for kind of communication from the API: confrontational, polite etc.
@@ -53,7 +52,6 @@ slackMessage = (msg, back, cb) ->
          username: "politechecked",
          text: "#{title}"
       }
-
    return data
       		
 politenessScrap = (msg, cb) ->
