@@ -51,7 +51,7 @@ slackMessage = (msg, back, cb) ->
 
       data = {
          channel: msg.message.room,
-         attachments: [{color:"#{color}",title: "#{value}% Polite", "title_link": "#{link}"}],
+         attachments: [{color:"#{color}",title: "#{value}% Polite", title_link: "#{link}"}],
          username: "politechecked",
          text: "#{title}"
       }
