@@ -14,10 +14,10 @@ module.exports = (robot) ->
   
    robot.respond politecheck, (msg) ->
       
-      lastMessage = msg.robot.brain.get(politecheck_lookup_id(msg))
+      #lastMessage = msg.robot.brain.get(politecheck_lookup_id(msg))
       
-      politenessScrap lastMessage, (back) ->
-         robot.emit 'slack-attachment', slackMessage(lastMessage,back)
+      politenessScrap msg.robot.brain.get(politecheck_lookup_id(msg)), (back) ->
+         robot.emit 'slack-attachment', slackMessage(msg,back)
          #msg.send slackMessage(lastMessage,back)
 
   #robot hears everything, caches the last thing heard that isn't politecheck
