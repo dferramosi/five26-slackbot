@@ -5,7 +5,6 @@
 #	  I found it's api and messed around enough to integrate this
 #	  into our chat bot :D
 #   https://labs.foxtype.com/politeness
-
 # Commands:
 #   hubot politecheck - Returns a value with how polite the last spoken phrase was
 
@@ -14,9 +13,12 @@ module.exports = (robot) ->
    politecheck=/polite( )?check/i
   
    robot.respond politecheck, (msg) ->
-      politenessScrap msg.robot.brain.get(politecheck_lookup_id(msg)), (back) ->
-         robot.emit 'slack-attachment', slackMessage(msg.robot.brain.get(politecheck_lookup_id(msg)),back)
-         #msg.send slackMessage(msg.robot.brain.get(politecheck_lookup_id(msg),back)
+      
+      lastMessage = msg.robot.brain.get(politecheck_lookup_id(msg))
+      
+      politenessScrap lastMessage, (back) ->
+         robot.emit 'slack-attachment', slackMessage(lastMessage,back)
+         #msg.send slackMessage(lastMessage,back)
 
   #robot hears everything, caches the last thing heard that isn't politecheck
   #should likely expand this to a list of all robot commands
@@ -26,9 +28,12 @@ module.exports = (robot) ->
          msg.robot.brain.set politecheck_lookup_id(msg), message 
 
 slackMessage = (msg, back, cb) ->
-   phrase = msg.message
-   phrase = phrase.replace(/\ /g, "+")
-   link = "https://labs.foxtype.com/politeness?text=#{phrase}"
+   #phrase = msg.message
+   #phrase = phrase.replace(/\ /g, "+")
+   ##BREAK POINT ->  learn more about callbacks to proceed.  for some reason msg.message doesn't
+   ##                have any value the second time you pass msg.  Not sure why, but it's either 
+   ##                a scope issue or msg is getting altered
+   link = "https://labs.foxtype.com/politeness?text=actual+link+coming+soon"
    value = Math.round(back.score * 100) / 1
 
    #this can be expanded to include the tags for kind of communication from the API: confrontational, polite etc.
