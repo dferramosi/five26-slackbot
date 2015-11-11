@@ -27,25 +27,23 @@ module.exports = (robot) ->
          msg.robot.brain.set politecheck_lookup_id(msg), message 
 
 slackMessage = (msg, back, cb) ->
-   phrase = msg
-   phrase = phrase.replace(/\ /g, "+")
-   link = "https://labs.foxtype.com/politeness?text=#{phrase}"
+   #phrase = msg
+   #phrase = phrase.replace(/\ /g, "+")
+   #link = "https://labs.foxtype.com/politeness?text=#{phrase}"
+   link = "http://www.google.com"
    value = Math.round(back.score * 100) / 1
 
    #this can be expanded to include the tags for kind of communication from the API: confrontational, polite etc.
    #their rating system has a % number and kind
    if value >= 70
-      badgeImg = "http://i.imgur.com/ux8gV2Q.jpg"
       color = "#4183C4"
       title = "Nicely said Grandma..."
 
    else if value >= 40 && value < 70
-      badgeImg = "http://i.imgur.com/l91y3n0.jpg"
       color = "#FFA500"
       title = "That was slightly dickish"
 
    else if value < 40
-       badgeImg = "http://i.imgur.com/t5AvBQF.jpg"
        color = "#FF0000"
        title = "You're a certified asshole!"
 
