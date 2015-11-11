@@ -27,33 +27,33 @@ module.exports = (robot) ->
          msg.robot.brain.set politecheck_lookup_id(msg), message 
 
 slackMessage = (msg, back, cb) ->
-   link = "https://labs.foxtype.com/politeness"
+   phrase = msg
+   phrase = phrase.replace(/\ /g, "+")
+   link = "https://labs.foxtype.com/politeness?text=#{phrase}"
    value = Math.round(back.score * 100) / 1
-   
+
    #this can be expanded to include the tags for kind of communication from the API: confrontational, polite etc.
    #their rating system has a % number and kind
    if value >= 70
       badgeImg = "http://i.imgur.com/ux8gV2Q.jpg"
       color = "#4183C4"
-      title = "Certified Grandma!"
-      #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Grandma-green.svg"
+      title = "Nicely said Grandma..."
+
    else if value >= 40 && value < 70
       badgeImg = "http://i.imgur.com/l91y3n0.jpg"
       color = "#FFA500"
-      title = "Slightly Dickish"
-      #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Slightly%20Dickish-orange.svg"
+      title = "That was slightly dickish"
+
    else if value < 40
        badgeImg = "http://i.imgur.com/t5AvBQF.jpg"
        color = "#FF0000"
-       title = "Certified Asshole!"
-      #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
+       title = "You're a certified asshole!"
 
       data = {
          channel: msg.message.room,
-         attachments: [{color:"#{color}",title: "#{title}"}],
+         attachments: [{color:"#{color}",title: "#{value}% Polite", "title_link": "#{link}"}],
          username: "politechecked",
-         image_url: "#{badgeImg}",
-         text: "#{value}% Polite"
+         text: "#{title}"
       }
 
    return data
@@ -68,21 +68,7 @@ politenessScrap = (msg, cb) ->
       .post() (err, res, body) ->
          try
             json = JSON.parse body
-           
-            value = Math.round(json.score * 100) / 1
             cb json
-           #if value >= 70
-               #cb value
-           #    cb "http://i.imgur.com/ux8gV2Q.jpg"
-               #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Grandma-green.svg"
-           #else if value >= 40 && json.score < 70
-           	   #cb value
-           #	   cb "http://i.imgur.com/l91y3n0.jpg"
-           	   #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Slightly%20Dickish-orange.svg"
-           #else if value < 40
-           	   #cb value
-           #	   cb "http://i.imgur.com/t5AvBQF.jpg"
-           	   #cb "https://img.shields.io/badge/Polite%20Check-#{value}%:%20%20Certified%20Asshole-red.svg"
          catch err
       	    cb "this shit broke, @awesinine--"
 
