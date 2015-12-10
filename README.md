@@ -4,7 +4,7 @@
 
 "Truely an abomination"
 
-[kek](http://i.imgur.com/Qo7Si7o.jpg','http://i.imgur.com/Y3EMYMy.png)
+[topkek](http://i.imgur.com/Qo7Si7o.jpg','http://i.imgur.com/Y3EMYMy.png)
 
 
 ### Running hubot Locally
