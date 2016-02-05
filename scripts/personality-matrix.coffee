@@ -13,7 +13,10 @@ module.exports = (robot) ->
    #Stupid simple shit responses we enjoy:
    robot.hear /joel/i, (msg) ->
      msg.send "JOEL!!!"
-
+   
+   robot.hear /im out|i'm out|I'm out|fuck that shit|bullshit/i, (msg) ->
+     msg.send "http://i.imgur.com/VroA892.gif?1"
+     
    robot.hear /kek/i, (msg) ->
      msg.send msg.random kek
 
