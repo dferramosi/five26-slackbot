@@ -7,6 +7,7 @@
 cloudflare = [':poop:flare', 'lulzflare', 'derpflare', 'herpesflare', 'downtimeflare', 'shitflare', 'slaflare', 'dreamhost']
 kek = ['http://i.imgur.com/oWBhLjU.jpg', 'http://i.imgur.com/aheUOF1.jpg', 'http://i.imgur.com/0vyOajy.png', 'http://i.imgur.com/3TJqrki.png', 'http://i.imgur.com/Qo7Si7o.jpg','http://i.imgur.com/Y3EMYMy.png','http://i.imgur.com/2AqrbVy.jpg','http://i.imgur.com/jhqGVTR.jpg', 'http://i.imgur.com/BqjKRio.jpg?1', 'http://i.imgur.com/BTBS8pu.png', 'http://i.imgur.com/c7u9m3S.gif?1']
 lyl = ['http://i.imgur.com/j9iUptM.jpg'] 
+wot = ['http://i.imgur.com/22uS56K.jpg', 'http://i.imgur.com/uTZGZ62.jpg', 'http://i.imgur.com/5ZwTZLp.png', 'http://i.imgur.com/ozbBXsw.jpg', 'http://i.imgur.com/ieBMltD.jpg', 'http://i.imgur.com/EswGa1l.png']
 
 module.exports = (robot) ->
 
@@ -34,6 +35,9 @@ module.exports = (robot) ->
 
    robot.hear /rectum/i, (msg) ->
      msg.send "rectum? DAMN NEAR KILLED EM!"
+
+   robot.hear /wot/i, (msg) ->
+     msg.send msg.random wot
 
 #   robot.hear /fuck/i, (msg) -> #never uncomment this
 #     msg.send "EARMUFFS!"
